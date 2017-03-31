@@ -45,7 +45,7 @@ class UptimeMonitorServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-uptime-monitor.php', 'laravel-uptime-monitor');
 
-        $this->app['events']->subscribe(EventHandler::class);
+        $this->app['events']->subscribe(config('laravel-uptime-monitor.events.handler'));
 
         $this->app->bind('command.monitor:check-uptime', CheckUptime::class);
         $this->app->bind('command.monitor:check-certificate', CheckCertificates::class);

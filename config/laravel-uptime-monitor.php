@@ -2,6 +2,10 @@
 
 return [
 
+    'events' => [
+        'handler' => \Spatie\UptimeMonitor\Notifications\EventHandler::class
+    ],
+
     /*
      * You can get notified when specific events occur. Out of the box you can use 'mail'
      * and 'slack'. Of course you can also specify your own notification classes.
